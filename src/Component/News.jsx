@@ -81,13 +81,14 @@ export default class News extends Component {
     pageSize: PropTypes.number,
     category: PropTypes.string,
   };
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       articles: this.articles,
       page: 1,
       loading: false,
     };
+    document.title = `NewsBuddy - ${this.props.category}`;
   }
 
   async updateNews() {
